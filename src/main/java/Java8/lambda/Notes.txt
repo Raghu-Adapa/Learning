@@ -1,0 +1,30 @@
+
+* Lambda Expression  :
+
+    - Lambda Expression implements a Functional interface
+
+    - Not another way of writing instances of anonymous classes
+    - Anonymous classes can implement any type of interfaces and
+        it can extend any type of class like concrete class or abstract class
+
+* what is Functional Interface ?
+
+    - It is an interface has only one abstract method
+    - @FunctionalInterface annotation is optional for backword compatibility(ex: Runnable interface)
+
+
+* Four Categories of Lambda expressions
+
+    1. Supplier     : takes nothing, return any object
+    2. Consumer     : takes anything, returns nothing(void)
+    3. Predicate    : takes anything, return boolean    ( useful in filters )
+    4. Function     : takes anything and returns anything (  useful in streams/collections )
+
+
+* forEach
+    -   forEach is a default method in Iterable interface
+    -   it doesn't return anythign
+    -   takes Consumer object
+    -   can be apply on any collection to iterate the collection
+    -   method signature is
+            default void forEach(Consumer<? super T> action)
