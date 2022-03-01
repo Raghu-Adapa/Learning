@@ -28,3 +28,30 @@
     -   can be apply on any collection to iterate the collection
     -   method signature is
             default void forEach(Consumer<? super T> action)
+
+
+Method Reference:
+    - another way of writing lambda expressions
+    ex1:
+        Function<Persion, Integer> fun = person -> person.getAge();
+            -- can be written as below with method reference
+
+        Function<Persion, Integer> fun = Person::getAge ;
+
+
+    ex2:
+        BinaryOperation<Integer> b = (i1, i2) -> i1 + i2 ;
+                                   = (i1, i2) -> Integer.sum(i1 + i2);
+
+                -- with Method reference
+
+        BinaryOperation<Integer> b = Integer::sum ;
+
+            -- for Maximum value
+        BinaryOperation<Integer> b = Integer::max ;
+
+
+    ex3:
+        Consumer<String> printer = s -> System.out.println(s);
+
+        Consumer<String> printer = System.out :: println ;
