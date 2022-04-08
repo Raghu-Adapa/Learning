@@ -31,7 +31,7 @@ public class Q1_1 {
     }
 
 
-    // third approach
+    // third way
     public boolean isUnique(String str){
 
         for(int i=0;i<str.length();i++){
