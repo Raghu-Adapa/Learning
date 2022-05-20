@@ -10,37 +10,34 @@ public class CandidateCode {
         int T = sc.nextInt();
         for(int i=0;i<T;i++){
 
+            int k = sc.nextInt();
             int n = sc.nextInt();
             int[] arr = new int[n];
             for(int j=0;j<n;j++){
                 arr[j]=sc.nextInt();
             }
-            if(n>0)
-            System.out.println(countDuplicates(arr));
+            sumofK(k,arr);
         }
 
     }
 
-    private static int countDuplicates(int arr[]){
+    private static void sumofK(int k, int arr[]){
 
         int count = 0;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-        for(int i=0;i<arr.length;i++){
-            if(map.containsKey(arr[i])){
-                map.put(arr[i], map.get(arr[i])+1);
-            }else{
-                map.put(arr[i],1);
-            }
-        }
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
-            int value = entry.getValue();
-            if(value > 1){
-                count += (value * (value - 1));
+
+        for(int i=0;i<arr.length-1;i++){
+
+            for(int j=i+1; j<arr.length;j++){
+
+                if(arr[i] + arr[j] == k){
+                    System.out.println((i+1) + " "+ (j+1));
+                    break;
+                }
             }
         }
 
-        return count;
 
     }
 }

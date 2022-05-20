@@ -23,7 +23,7 @@
 
 * forEach
     -   forEach is a default method in Iterable interface
-    -   it doesn't return anythign
+    -   it doesn't return anything
     -   takes Consumer object
     -   can be apply on any collection to iterate the collection
     -   method signature is

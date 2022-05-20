@@ -1,5 +1,9 @@
 package linkedlist2;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
 public class LL {
 
     Node head;
@@ -178,6 +182,33 @@ public class LL {
         System.out.print(start.value + " -> ");
 
         //System.out.println("Start");
+
+    }
+
+    public Node removeDuplicate(Node head){
+
+
+        Set<Integer> set = new HashSet<>();
+
+        Node curr = head;
+
+        Node result = head;
+
+        while(curr != null){
+
+            if( ! set.contains(curr.value)){
+                set.add(curr.value);
+
+                result.next = curr;
+            }
+            curr = curr.next;
+        }
+
+        if(head == null)
+            return head;
+
+        return result.next;
+
 
     }
 

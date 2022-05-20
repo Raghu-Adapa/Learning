@@ -1,8 +1,0 @@
-
-// spring-data-jpa, postgresql crud
-
-
-    https://www.bezkoder.com/spring-boot-postgresql-example/
-
-    https://dzone.com/articles/spring-boot-and-postgresql
-
