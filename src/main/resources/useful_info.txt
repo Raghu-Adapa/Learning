@@ -1,0 +1,1096 @@
+
+For ex.
+
+If input array is sorted then
+- Binary search
+- Two pointers
+
+If asked for all permutations/subsets then
+- Backtracking
+
+If given a tree then
+- DFS
+- BFS
+
+If given a graph then
+- DFS
+- BFS
+
+If given a linked list then
+- Two pointers
+
+If recursion is banned then
+- Stack
+
+If must solve in-place then
+- Swap corresponding values
+- Store one or more different values in the same pointer
+
+If asked for maximum/minimum subarray/subset/options then
+- Dynamic programming
+
+If asked for top/least K items then
+- Heap
+
+If asked for common strings then
+- Map
+- Trie
+
+Else
+- Map/Set for O(1) time & O(n) space
+- Sort input for O(nlogn) time and O(1) space
+--------------------------------------------------------
+
+1. Leetcode
+Always ask clarifying questions, they are meant to be vague.
+
+Tech Interview Handbook (solve 50 suggested LCs multiple times): https://lnkd.in/dbK9TasP
+
+Grokking Coding Interview:
+https://lnkd.in/d4YzR_3d
+
+Solve each question yourself before looking at answers. After struggling with certain topics, found some youtube resources that were really helpful.
+
+- Graph problems: https://lnkd.in/dT4brkwG
+- Kahn’s topsort: https://lnkd.in/dc8VzPx7
+- Dijkstra’s shortest path: https://lnkd.in/djWD4ncp
+- Kruskal’s MST: https://lnkd.in/dUaF7dDr
+- Union find: https://lnkd.in/dmZSyGXq
+- Dynamic programming: https://lnkd.in/d85BHsQp
+
+I would say 1/2 of my coding questions was graph related, and I used topsort, MST, union find during my interviews so its worth knowing them well.
+
+Great resource on Binary Search (esp. for harder variants): https://lnkd.in/dPVikn9e
+
+Quite a few LC hards involve binary search as part of its solution, but its non-obvious.
+
+At staff level, you are expected to have great communication, come up with one or more high level solutions in reasonable time with space and time complexity, implement mostly correct, and check for errors independently.
+
+2. SYSTEM DESIGN
+
+Always ask clarifying questions, they are meant to be vague.
+
+No. 1 tip: Pay for mock interviews, take extensive notes, study, pay for more interviews. I used igotanoffer.com. Try booking different interviewers, they have different expectations, communication, friendliness.
+
+Grokking system design: https://lnkd.in/dKBtGDDG
+
+It’s good to complete grokking, but in practice its a little too shallow for staff level.
+
+Watch all videos and take notes from this channel: https://lnkd.in/d32sycXJ
+
+Most other channels like Exponent are actually not great examples of a good interviewee for staff level.
+
+Read papers on Dynamo, BigTable, MapReduce, Cassandra, Raft, Lamport Clocks, etc.
+
+A lot of material written by this Medium writer is great: https://lnkd.in/d_4yxAA7
+
+Memorize Jeff Dean’s latency numbers: https://lnkd.in/dq42yWsa
+
+If you have time, read DDIA: https://dataintensive.net
+
+I memorized mnemonics for structure of how I execute my interview, as well as for each topic. Like OSI model, caching strategies, load balancing strategies, database types, etc. You need to make up your own in order to ingrain them.
+
+link of post from blind website https://lnkd.in/dShYNZDf
+Remaining tips are in comments:
+
+-----------------------------------------------------
+
+** Interview questions : 
+
+
+
+	SQL Injections
+
+	types of garbage collections 
+
+	java 8 features 
+
+	Errors and exceptions 
+
+	JMS Tokens
+
+	----
+
+	how to provide security in AWS - IAM 
+
+	basic services of cloud 
+
+
+###
+Kafka : 
+
+
+cd C:\kafka_2.12-2.6.0
+
+zookeeper-server-start config/zookeeper.properties
+
+
+kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+kafka-topics.bat --bootstrap-server localhost:9092 --topic my-new-topic --describe
+
+
+kafka-topics.bat --bootstrap-server localhost:9092 --topic my-new-topic --create
+
+
+
+kafka-console-producer --bootstrap-server localhost:9092 --topic my-new-topic
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic my-new-topic
+
+------------------
+
+
+
+https://www.baeldung.com/java-stream-filter-lambda
+
+https://stackoverflow.com/questions/57836937/call-custom-static-functions-from-filter-and-map-in-java-8-stream
+
+
+
+https://blog.devart.com/how-to-optimize-sql-query.html
+
+Tip 1: Add missing indexes
+Tip 2: Check for unused indexes
+Tip 3: Avoid using multiple OR in the FILTER predicate
+Tip 4: Use wildcards at the end of a phrase only
+Tip 5: Avoid too many JOINs
+Tip 6: Avoid using SELECT DISTINCT
+Tip 7: Use SELECT fields instead of SELECT *
+Tip 8: Use TOP to sample query results
+Tip 9: Run the query during off-peak hours
+Tip 10: Minimize the usage of any query hint
+Tip 11: Minimize large write operations
+Tip 12: Create joins with INNER JOIN (not WHERE)
+
+
+---------------
+
+interview questions: 
+
+
+public class DuplicateRemover {
+
+    private static void removeDuplicates(int input[], int output[], AtomicInteger finalOutputSize) {
+        System.out.print("Not Implemented");
+		
+		HashSet<Integer> hs = new HashSet<Integer>();
+		
+		for(int i=0;i<input.length;i++){
+			
+			hs.add(input[i]);
+		}
+
+		for(int i=0;i<hs.size();i++){
+		
+			output[i] = hs.get(i);
+		}
+
+    }
+
+    public static void main(String[] args) {
+        int array[] = { 1, 1, 3, 7, 7, 8, 9, 9, 9, 10 };
+        int output[] = new int[array.length];
+        AtomicInteger finalOutputSize = new AtomicInteger();
+        removeDuplicates(array, output, finalOutputSize);
+        System.out.print("output[");
+        for (int i = 0; i < finalOutputSize.intValue(); ++i) {
+            System.out.print(output[i] + " ");
+        }
+        System.out.println("]");
+        return;
+    }
+}
+
+############
+
+
+input = [5 2 3 8 6 7]
+ouput = [8 3 8 8 7 7]
+
+
+ int[] output = new int[input.length];
+
+ Stack<Integer> stack = new Stack<>();
+ 
+ for(int i=length-1; i>=0;i--){
+ 
+     if(stack.isEmpty()){
+         stack.push(input[i]);
+     }
+ 
+     else{
+         stack.pop();    
+     }
+     
+ 
+ }
+ 
+ }
+ 
+     6
+     
+ 
+ input:
+    6
+  4    8
+ 2 5  7 9
+ 
+ 
+  range = [4 8]
+  
+  o/p:
+       6
+    4     8
+      5  7
+ 
+ 
+  range = [5 8]
+ 
+       6
+     5   8
+        7
+        
+
+  range = [7 9]
+ 
+       8
+     7   9
+
+        --       
+        
+        
+        
+ Node findSubTree(Node root, int min, int max){
+  
+      if(root == null) return;
+      
+       // we can ignore left sub tree
+      if(root.value < min ){
+      
+          root = root.right;
+      
+      }
+      
+      // we can ignore left sub tree
+      if(root.value == min ){
+      
+          root.left = null;
+      
+      }
+      
+            
+      if(root.value > max){
+          root.right = null;
+      }
+      
+      // we can ignore rigth sub tree
+      if(root.value >= max){
+          root.right = null;
+      }
+      
+      findSubTree(root.left, min, max);
+      findSubTree(root.left, min, max);
+      
+  
+  
+  }
+
+############
+
+
+
+ 43lm5620pta
+ 
+ * merge multiple log files into single output file :
+ 
+ file1.log
+ 
+	timestamp Level class 
+	1 2 3 4 9
+	
+ file2.log
+ 
+	timestamp Level class 
+	3 4 6 8 9
+	j
+
+ file3.log
+ 
+     3 3 3 3 3
+	 k
+	timestamp Level class 	
+	
+	
+	
+	3 3 
+	
+	
+  output: 
+  
+    1 2
+  --------------------------
+  
+  
+
+parking alot system design : 
+
+	50,
+
+	slots = 200
+	
+	Register 
+	Login 
+	
+	Vehicles - car, bus, bike
+	
+	
+	Register 
+	
+	Login
+	
+	
+	Void Register(User user){
+		
+			// register
+		}
+	
+	
+	// loging( username, password )
+	
+	// AddVehicle (userID, vehicleID)
+	
+	
+	// List<Garrage> getOpenGaragues(int city, vehicleType)
+	
+	
+	// List<Slot> getOpenSlots(int garagueID, slotType	)
+	
+	// String bookingSlot(username, slotID, startTime, endTime)
+	
+	// CalculatePrice( tickeID, priceId);
+	
+	// printReceipt( )
+	
+	// leavingSlot()
+	
+	
+	
+	
+	
+	
+	---
+	
+	User{
+	
+		userID;	
+		name;
+		Address;
+		contact;
+		createdAt
+	
+	}
+	
+	Garrage{
+		garagueID;
+		Country;
+		City;
+		Address;
+	
+	}
+	
+	
+	Slot{
+	
+		garagueID foreign key
+		SlotID PK
+		status;
+		SlotType ;		
+	}
+	
+	
+	SlotBooking
+		registerID
+		tickeID, 
+		garagueID, 
+		slotID,
+		bookingStartTime
+		bookingEndTime
+		entryTime
+		leavingTime
+		estimatedPrice
+		Actualprice
+		
+		
+
+	PriceStructure{
+		priceId
+		garagueID
+		slotType
+		//Ondemand 		
+	
+	}
+	
+	
+	
+	Ticket 
+		tickeID 
+		Vehicle
+		entryTime 
+		duration : 
+		
+----------------------------------
+
+
+
+** find path some 
+	
+	Input: root = [1,2,3]
+	
+	Output: 25
+	
+	
+	Input: root = [4,9,0,5,1]
+	Output: 1026
+	
+		4 
+	9		0
+	
+5		1
+
+
+
+   4  9   5
+
+
+findPath(Node root){
+
+	Stack<Integer> stack = new Stack<Integer>();
+	
+	stack.put(root)
+	
+	Node curr = stack.peek();
+	
+	while(curr.left!=null){
+			
+			stack.push(curr.left);
+	
+	}
+	
+
+
+	
+
+}
+   
+
+
+
+
+
+Node{
+
+	int value;
+	Node left;
+	Node right;
+	
+	Node(int value){
+		this.value = value;
+	}
+}
+
+	static int sum  = 0;
+
+
+	private void findPath( Node root, int pathValue ){
+	
+		if(root == null ) return ;
+		
+		int curr_sum = pathValue* 10 + root.value;
+		
+		// leafnode
+		if(root.left == null && root.right == null){
+			
+			// add this num to sum 
+			
+			sum += curr_sum;
+			
+		}
+		
+		// left sub tree
+		findPath( root.left, curr_sum );
+		
+		findPath( root.right, curr_sum );
+		
+	
+	}
+	
+	
+	
+	Class Test(){
+	
+		Test test ;
+	
+		Test getInstance(){
+		
+			if(test == null){
+				
+				
+			
+			}
+		
+		}
+	
+	}
+
+----------------------
+
+* Rotate array based on input array :
+
+String str = "abc";
+
+bbc
+ccc
+ddd
+eed
+		
+			
+		['a',  'b',  'c']	
+
+
+int[] arr = {1,2,3,2}
+
+count = 4, 3, 1
+---------------------------
+
+* remove spance in sentence : 
+
+	
+
+	String str = "my name is raghu adapa";
+	
+	output : mynameisraghuadapa
+	
+	
+private String removeWhiteSpace( String str ){	
+	
+	StringBuffer out = new StringBuffer();
+	
+	for(int i=0;i<str.length();i++){
+	
+		char ch = str.charAt(i);
+		
+		if(ch != ' '){
+		
+			out.append(ch);
+		}
+	
+	}
+	return out.toString();
+	
+}
+	
+	
+private String removeWhiteSpace( String str ){	
+	
+	
+	
+	return out.toString();
+	
+}	
+	------------------------------------------------------
+	
+*****
+
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+ 
+
+Example 1:
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+Example 2:
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
+
+-------------------
+
+Example 2:
+
+lable = A;
+Input: grid = [
+  ["A","A","0","0","0"],
+  ["A","A","0","0","0"],
+  ["0","0","B","0","0"],
+  ["0","0","0","C","C"]
+]
+Output: 3
+
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+
+Input: lable = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","2","0","0"],
+  ["0","0","0","3","3"]
+]
+
+
+int lableCount = 0;
+
+for(int i=0;i<grid.length;i++){
+
+	for(int j=0;j<grid[0].length;j++){
+	
+		if(grid[i][j] == 1){
+		
+			if(i==0 && j==0 && grid[i][j] == 1){
+				
+				lable[i][j] = lableCount+1; 
+			}
+		
+			// new island  i=2, j=2
+			if((i>0 && grid[i-1][j] == 0) && (j>0 && grid[i][j-1] == 0)){
+			
+				lable[i][j] = lableCount+1; 
+			
+			}
+		
+			
+		
+			// check the top element
+			if(i>0 && grid[i-1][j] == 1){
+			
+				lable[i][j] = lable[i-1][j];
+				
+			}
+			
+			// check left element
+			if(j>0 && grid[i][j-1] == 1){
+			
+				lable[i][j] = lable[i][j-1];
+				
+			}
+		
+		}
+	
+	}
+	
+	return lableCount;
+
+}
+
+Input: grid = [
+  ["1","0","0","0","0"],
+  ["0","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+
+-----------------------------------------
+
+* increment number by one 	
+
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+Increment the large integer by one and return the resulting array of digits.
+
+Input: digits = [1,2,3]
+
+Output: [1,2,4]
+
+	
+	private int[] incrementArrayByOne(int[] digits){
+	
+		if( digits.length ==0 ) return null;
+	
+		int carry = 1;
+		for(int i=digits.length-1 ;i>=0; i--){
+		
+			int csum = digit[i] + carry;
+			if(csum ==10 ){
+			
+				digit[i] = 0;
+				carry = 1;
+			}else{
+			
+				digit[i] = csum;
+				carry = 0;
+				break;
+			}
+		}
+		if(carry == 1){
+		
+			int[] result = new int[digit.length + 1];
+			result[0] = 1;
+			return result;
+		}
+		return digits;
+	
+	}
+
+
+
+[0,0,0,0]
+
+
+659 => 660
+
+99  => 100
+	
+-------------------------
+	
+		Table employee - EmpId, EmpName, ManagerId
+
+** List of all employeeNames and their ManagerNames
+
+(self joining the table, as emp and manager will sit in same table )
+
+Select e1.EmpName as empName, e2.EmpName as ManagerName
+from employee e1, employee e2 
+where e1.ManagerId = e2.EmpID;
+
+
+Employee , Address
+
+
+Class Employee {
+
+Employee (){
+	Address a = new Address();
+}
+}
+
+Class Employee {
+
+	Address  address;
+	Car car;
+Employee (Car  car){
+	This.address = addr;
+}
+}
+
+
+class Car{
+
+}
+
+
+—-------------------------------------------------------------------------------------
+
+* get max length of palindrome : 
+
+String S= abdgabcdcbafytyb
+
+Abcdcba
+Bcdcb
+Cdc
+Yty
+
+String S= abdgabcdcbafytyb
+
+
+Private static void main(String[] arr){
+
+ getMaxLengthOfPalindrome();
+}
+
+Private static getMaxLengthOfPalindrome(String str){
+Int max = 1;
+for(int i=0;i<S.length()-1;i++){
+
+	for(int j=i+1;j<S.length();j++){
+		
+		String sub = S.subString(i,j);
+
+		if(isPalindrome(sub)  && sub.length()>max){
+			Max = sub.length();
+		}
+	}
+}
+}
+
+Private static boolean isPalindrome(String str){
+
+	Char[] ch = str.toCharArray();
+
+Int n=  ch.length;
+
+	for(int i=0; i<n/2;i++){
+		if(arr[i] != arr[n-i-1]){
+	Return false;
+}
+}
+Return true;
+
+}
+
+
+—-----------------------------------------------------------------
+
+** sum of leaf nodes : 
+
+                        1
+        2                                       3
+
+
+4             5                        6             7
+
+                  8               9
+
+
+
+Node{
+	Int data;
+	Node left;
+	Node right;
+
+	Node( int data){
+		This.data = data;
+}
+	
+}
+
+
+Static int sum = 0;
+Private void traverse(Node root){
+
+	if(root == null) return;
+
+	// leafNode
+	if( root.left == null && root.right==null){
+		Sum = sum+ root.data;
+}
+
+ 	traverse(root.left);
+traverse(root.right);
+
+Return;
+}
+
+---------------------------------
+
+* questions on functional interface and
+
+
+@FunctionalInterface
+interface MyInterface{
+
+	int myMethod( String str);
+
+}
+
+MyInterface mi = ( str )  -> {
+
+		// code
+		
+		return 20;
+}
+--------------
+
+key, value;
+
+
+-------------
+** some snippet questions 
+
+ArrayList<int> al = new ArrayList<int>();
+
+al.add(22);
+------
+
+   address -> {area: "", pincode:500081}
+   
+			  {area: "a1", pincode:500082}
+
+
+Address{
+ 	final String area;
+	final int pincode;
+	
+	Address( ... ){
+		...
+	}
+}
+
+class Employee {
+	final String name;
+	final int salary;
+	final Address address;
+	
+	Employee(String name , int salary, Address address){
+	
+		this.name = name;
+		
+	}
+	
+	main(){
+		
+	 Employee e = new Employee("Abc", 10000, {area: "", pincode:500081});
+	 
+	 e.getAddress().setPincode();
+	 
+	}
+
+}
+  
+---------------------------------------
+
+Print the pattern : 
+
+
+1
+12
+123
+1234
+123
+12
+1
+
+	private void printPattern( int n){
+	
+		for(int i=1;i <= n ; i++){
+		
+			for(int j=0;j<=i; j++){
+			
+				System.out.print((j+1)+ " ");
+			
+			}
+			
+		
+		}
+	
+	}
+	
+	select salary from employee where row_num <=2 order by salary ;
+
+------------------------------------
+
+** Hashtable implementation : 
+
+
+
+/*
+     MyHashtable table = new Hashtable();
+     table.put(new String("name"), "Jacob");
+     table.put(new String("name"), "Raghu");
+*/
+
+
+
+class Element{
+    private String key;
+    private String value;
+    
+    Element(String key, String value){
+        this.key = key;
+        this.value = value;
+    }
+
+}
+
+public class MyHashtable {
+
+    int n =10 ;
+    
+    int size = 0;
+
+    LinkedList<Element> linkedList[] = new LinkedList<Element>()[n];
+
+    
+    
+    public syncronize void add(String key, String value){
+    
+        int hashCode = getHashCode(key);
+        
+        Element newElement = new Element(key, value);
+        
+        if(linkedList[hashCode] == null ){
+            
+            LinkedList<Element> newList = new LinkedList<Element>();
+                        
+            newList.add(newElement);
+            
+            linkedList[hashCode] = newList;
+            
+        } else{
+        
+            LinkedList<Element> currentList = linkedList[hashCode];
+            for(Element element : currentList){
+            
+                if(element.key.equals( key )){
+                    element.value = value;
+                    return;
+                }
+            }
+        
+            linkedList[hashCode].add(newElement);
+        
+        }
+        size++;
+    
+    }
+    
+    public String get(String key) {
+    
+        int hashCode = getHashCode(key);
+        
+        if(linkedList[hashCode] == null){
+        
+            return null;
+            
+        }else{
+            
+            LinkedList<Element> currentList = linkedList[hashCode];
+            
+            for(Element element : currentList){
+            
+                if(element.key.equals(key)){
+                    return element.value;
+                }
+            }
+            return null;
+        
+        }
+    
+    }
+    
+    
+    // hash
+    int getHashCode(String key){
+    
+        int sum = 0;
+        
+        for(int i=0;i<key.length();i++){
+            int char = key.charAt(i);
+            sum += char;
+        }
+        sum % n;
+    
+    }
+}
+
+-----------------------------
+	
+ 
+ 
